@@ -31,7 +31,7 @@ def get_db():
 
 @app.get("/")
 def read_root():
-    return {"mensaje": "¡Despliegue exitoso con Nginx y Python!"}
+    return {"mensaje": "¡Despliegue exitoso con Nginx y Python! desarrollado por oscar mamani pilco"}
 
 @app.post("/items/")
 def crear_item(nombre: str, descripcion: str, db: Session = Depends(get_db)):
