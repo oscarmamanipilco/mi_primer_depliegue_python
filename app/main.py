@@ -29,6 +29,7 @@ def get_db():
     finally:
         db.close()
 
+@app.get("/")
 def read_root():
     return {
         "sistema": "Gestión de Entregas - Motorizados",
