@@ -29,9 +29,14 @@ def get_db():
     finally:
         db.close()
 
-@app.get("/")
 def read_root():
-    return {"mensaje": "¡Despliegue exitoso con Nginx y Python! desarrollado por oscar mamani pilco"}
+    return {
+        "sistema": "Gestión de Entregas - Motorizados",
+        "desarrollador": "Oscar Mamani Pilco",
+        "estado": "Servidor en la Nube (DigitalOcean) Operativo",
+        "version": "1.0.2",
+        "ubicacion": "Puno, Perú"
+    }
 
 @app.post("/items/")
 def crear_item(nombre: str, descripcion: str, db: Session = Depends(get_db)):
