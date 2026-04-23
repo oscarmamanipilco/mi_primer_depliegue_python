@@ -42,53 +42,7 @@ def read_root():
         "ubicacion": "Puno, Perú"
     }
 """
-"""
 
-@app.get("/", response_class=HTMLResponse) # <--- Le decimos que responderá HTML
-def read_root():
-    return """
-    <!DOCTYPE html>
-    <html lang="es">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Gestión de Entregas - Oscar</title>
-        <script src="https://cdn.tailwindcss.com"></script>
-    </head>
-    <body class="bg-slate-900 text-white font-sans flex items-center justify-center h-screen">
-        <div class="bg-slate-800 p-8 rounded-2xl shadow-2xl border border-slate-700 max-w-md w-full text-center">
-            <h1 class="text-3xl font-bold text-blue-400 mb-4">🚀 Sistema de Entregas</h1>
-            <p class="text-slate-400 mb-6 text-lg">Bienvenido al centro de control de motorizados.</p>
-            
-            <div class="space-y-4 text-left bg-slate-900/50 p-6 rounded-lg border border-slate-700">
-                <div class="flex justify-between">
-                    <span class="text-slate-500">Desarrollador:</span>
-                    <span class="font-medium">Oscar Mamani Pilco</span>
-                </div>
-                <div class="flex justify-between">
-                    <span class="text-slate-500">Estado:</span>
-                    <span class="text-green-400 font-bold uppercase text-sm flex items-center">
-                        <span class="w-2 h-2 bg-green-400 rounded-full mr-2"></span> En Línea
-                    </span>
-                </div>
-                <div class="flex justify-between">
-                    <span class="text-slate-500">Ubicación:</span>
-                    <span class="font-medium italic">Puno, Perú</span>
-                </div>
-            </div>
-
-            <div class="mt-8">
-                <a href="/docs" class="bg-blue-600 hover:bg-blue-500 text-white font-bold py-2 px-6 rounded-full transition duration-300 ease-in-out transform hover:scale-105">
-                    Ir al Panel de Control
-                </a>
-            </div>
-            
-            <p class="mt-8 text-xs text-slate-500">Versión 1.2.0 • DigitalOcean Production</p>
-        </div>
-    </body>
-    </html>
-    """
-"""
 @app.get("/", response_class=HTMLResponse)
 def read_root():
     return """
