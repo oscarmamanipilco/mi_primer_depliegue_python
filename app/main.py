@@ -42,6 +42,8 @@ def read_root():
         "ubicacion": "Puno, Perú"
     }
 """
+"""
+
 @app.get("/", response_class=HTMLResponse) # <--- Le decimos que responderá HTML
 def read_root():
     return """
@@ -86,7 +88,59 @@ def read_root():
     </body>
     </html>
     """
+"""
+@app.get("/", response_class=HTMLResponse)
+def read_root():
+    return """
+    <!DOCTYPE html>
+    <html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Control de Logística - Oscar</title>
+        <script src="https://cdn.tailwindcss.com"></script>
+    </head>
+    <body class="bg-slate-900 text-white font-sans">
+        <div class="flex items-center justify-center min-h-screen p-4">
+            <div class="bg-slate-800 p-8 rounded-2xl shadow-2xl border border-slate-700 max-w-2xl w-full">
+                <header class="text-center mb-8">
+                    <h1 class="text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-emerald-400 mb-2">
+                        Panel de Entregas
+                    </h1>
+                    <p class="text-slate-400">Logística de Motorizados • Puno, Perú</p>
+                </header>
 
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                    <div class="bg-slate-900/50 p-6 rounded-xl border border-slate-700">
+                        <h2 class="text-blue-400 font-bold mb-2">Estado del Servidor</h2>
+                        <p class="text-2xl font-mono text-green-400">ONLINE</p>
+                    </div>
+                    <div class="bg-slate-900/50 p-6 rounded-xl border border-slate-700">
+                        <h2 class="text-emerald-400 font-bold mb-2">Versión de App</h2>
+                        <p class="text-2xl font-mono text-white">v1.3.0</p>
+                    </div>
+                </div>
+
+                <div class="space-y-4 mb-8">
+                    <h3 class="text-slate-300 font-semibold border-b border-slate-700 pb-2">Accesos Directos</h3>
+                    <div class="flex flex-wrap gap-4">
+                        <a href="/items/" class="flex-1 text-center bg-slate-700 hover:bg-slate-600 p-4 rounded-lg transition">
+                            📦 Ver Pedidos
+                        </a>
+                        <a href="/docs" class="flex-1 text-center bg-blue-600 hover:bg-blue-500 p-4 rounded-lg transition font-bold">
+                            ➕ Registrar Nuevo
+                        </a>
+                    </div>
+                </div>
+
+                <footer class="text-center text-xs text-slate-500 border-t border-slate-700 pt-6">
+                    Desarrollado por <span class="text-slate-300 font-medium">Oscar Mamani Pilco</span> • Desplegado en DigitalOcean
+                </footer>
+            </div>
+        </div>
+    </body>
+    </html>
+    """
 @app.post("/items/")
 def crear_item(nombre: str, descripcion: str, db: Session = Depends(get_db)):
     nuevo = ItemDB(nombre=nombre, descripcion=descripcion)
