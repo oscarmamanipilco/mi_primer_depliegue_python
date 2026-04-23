@@ -44,7 +44,7 @@ def read_root():
     </head>
     <body class="bg-slate-900 text-white font-sans flex items-center justify-center min-h-screen">
         <div class="bg-slate-800 p-8 rounded-2xl shadow-2xl border border-slate-700 max-w-md w-full text-center">
-            <h1 class="text-3xl font-bold text-blue-400 mb-6">🚀 Sistema de Entregas</h1>
+            <h1 class="text-3xl font-bold text-red-500 mb-6">🚀 Sistema de Entregas experimental</h1>
             <div class="space-y-4">
                 <a href="/ver-pedidos" class="block w-full bg-blue-600 hover:bg-blue-500 text-white font-bold py-3 px-6 rounded-lg transition">
                     📦 Ver Tabla de Pedidos
